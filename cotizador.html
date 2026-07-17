@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi cotizador | Grupo JesNor</title>
+  <meta name="description" content="Revisa y confirma tu cotización de concreto premezclado, bombeo y aditivos." />
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body class="page--cotizador">
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="index.html" class="site-header__brand">
+        <span class="site-header__brand-mark">GJ</span>
+        <span class="site-header__brand-name">Grupo<strong>Jesnor</strong></span>
+      </a>
+      <nav class="site-header__nav" aria-label="Navegación principal">
+        <ul class="site-header__nav-list">
+          <li><a class="site-header__nav-link" href="index.html">Cotizar</a></li>
+          <li><a class="site-header__nav-link" href="productos.html">Productos</a></li>
+          <li><a class="site-header__nav-link site-header__nav-link--active" href="cotizador.html">Mi cotizador</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="quote-summary-intro">
+      <div class="container">
+        <p class="quote-summary-intro__eyebrow">Paso final</p>
+        <h1 class="quote-summary-intro__title">Revisa tu cotización</h1>
+        <p class="quote-summary-intro__lead">
+          Este es el resumen de los datos capturados en <strong>Cotizar</strong> y de los
+          productos elegidos en <strong>Productos</strong>. Puedes ajustar el volumen y
+          confirmar los servicios antes de enviarla.
+        </p>
+      </div>
+    </section>
+
+    <section class="quote-summary" aria-labelledby="resumen-title">
+      <div class="container quote-summary__grid">
+
+        <!-- Columna izquierda: datos + productos (rellenados por JS) -->
+
+        <div class="quote-summary__main">
+
+          <article class="summary-card">
+            <h2 id="resumen-title" class="summary-card__title">Datos del cliente y la obra</h2>
+            <dl class="summary-list" id="cliente-resumen">
+              
+              <div class="summary-list__row">
+                <dt>Nombre</dt>
+                <dd data-field="clienteNombre">—</dd>
+              </div>
+              <div class="summary-list__row">
+                <dt>Tipo de obra</dt>
+                <dd data-field="tipoObra">—</dd>
+              </div>
+              <div class="summary-list__row">
+                <dt>Dirección</dt>
+                <dd data-field="direccionObra">—</dd>
+              </div>
+              <div class="summary-list__row">
+                <dt>Teléfono</dt>
+                <dd data-field="telefono">—</dd>
+              </div>
+              <div class="summary-list__row">
+                <dt>Correo</dt>
+                <dd data-field="correo">—</dd>
+              </div>
+            </dl>
+            <p class="summary-card__empty-state" id="cliente-empty" hidden>
+              Aún no has llenado el formulario de <a href="index.html">Cotizar</a>.
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h2 class="summary-card__title">Concreto y Volumen</h2>
+
+            <div class="summary-form-row">
+              <div class="summary-form-row__field">
+                <span class="summary-form-row__label">Tipo de concreto seleccionado</span>
+                <span class="summary-form-row__value" data-field="productoConcreto">—</span>
+              </div>
+
+              <div class="summary-form-row__field">
+                <label class="summary-form-row__label" for="volumen-confirmado">
+                  Volumen a solicitar (m³)
+                </label>
+                <input
+                  class="summary-form-row__input"
+                  type="number"
+                  id="volumen-confirmado"
+                  min="1"
+                  step="0.5"
+                />
+              </div>
+            </div>
+          </article>
+
+          <article class="summary-card">
+            <h2 class="summary-card__title">Servicios de bombeo seleccionados</h2>
+            <ul class="summary-tags" id="bombeo-resumen">
+            </ul>
+            <p class="summary-card__empty-state" id="bombeo-empty">
+              No seleccionaste servicio de bombeo. <a href="productos.html">Elegir bombeo</a>
+            </p>
+          </article>
+
+          <article class="summary-card">
+            <h2 class="summary-card__title">Aditivos seleccionados</h2>
+            <ul class="summary-tags" id="aditivos-resumen">
+            </ul>
+            <p class="summary-card__empty-state" id="aditivos-empty">
+              No seleccionaste aditivos. <a href="productos.html">Elegir aditivos</a>
+            </p>
+          </article>
+
+        </div>
+
+        <!-- Columna derecha: total + acciones -->
+        <aside class="quote-summary__aside">
+          <div class="total-card">
+            <h2 class="total-card__title">Total estimado</h2>
+            <p class="total-card__amount" id="total-estimado">$ 0.00 + IVA</p>
+            <p class="total-card__note">
+              Precio de referencia. El costo final se confirma al validar disponibilidad
+              y ruta de entrega.
+            </p>
+            <ul class="total-card__breakdown" id="total-desglose">
+            </ul>
+            <button type="button" class="btn-primary btn-primary--block" id="enviar-cotizacion-btn">
+              Enviar cotización
+            </button>
+            <a href="productos.html" class="btn-ghost btn-ghost--block">Modificar productos</a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; 2026 Grupo JesNor SAS de CV. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="js/main.js" defer></script>
+  
+  <script src="js/cotizador.js" defer></script>
+
+</body>
+</html>

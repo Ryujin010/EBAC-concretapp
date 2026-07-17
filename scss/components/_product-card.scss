@@ -1,0 +1,96 @@
+// =====================================================
+// PRODUCT CARD — Bloque BEM: .product-card
+// El input real queda oculto visualmente pero accesible;
+// el estilo "seleccionado" se pinta con :checked + selector hermano.
+// =====================================================
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-2;
+
+  @include bp-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include bp-lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-card {
+  position: relative;
+  display: block;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+
+    &:focus-visible ~ .product-card__body {
+      outline: 3px solid $color-safety-orange;
+      outline-offset: 2px;
+    }
+
+    &:checked ~ .product-card__body {
+      border-color: $color-safety-orange;
+      box-shadow: $shadow-card-hover;
+      background-color: rgba($color-safety-orange, 0.05);
+
+      &::after {
+        content: '✓';
+        position: absolute;
+        top: $space-1;
+        right: $space-1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: $color-safety-orange;
+        color: $color-white;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    height: 100%;
+    padding: $space-3;
+    background-color: $color-white;
+    border: 2px solid $color-border;
+    border-radius: $radius-md;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+
+    &:hover {
+      border-color: rgba($color-safety-orange, 0.5);
+    }
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  &__desc {
+    font-size: 0.85rem;
+    color: $color-concrete-wet;
+    flex-grow: 1;
+  }
+
+  &__price {
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $color-rebar-blue;
+    margin-top: $space-1;
+  }
+}

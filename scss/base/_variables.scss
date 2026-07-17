@@ -1,0 +1,50 @@
+// =====================================================
+
+// TOKENS DE DISEÑO — Grupo JesNor SAS de CV
+
+// Paleta inspirada en obra: cemento, concreto húmedo,
+// acero de refuerzo y el naranja de seguridad de sitio.
+
+// =====================================================
+
+// --- Color ---
+
+$color-charcoal:      #2B2A28; // texto principal, header, footer
+$color-concrete:      #8C8880; // gris cemento — superficies secundarias
+$color-concrete-wet:  #55524C; // gris concreto húmedo — texto secundario
+$color-sand:          #EDE7DB; // fondo claro cálido (arena)
+$color-white:         #FFFFFF;
+$color-safety-orange: #E8590C; // acento primario — CTAs, activos, foco
+$color-rebar-blue:    #48565C; // acento secundario — enlaces, info
+
+$color-success:       #2E7D4F;
+$color-border:        rgba($color-charcoal, 0.12);
+
+// --- Tipografía ---
+
+$font-display: 'Oswald', 'Arial Narrow', sans-serif;   // titulares, señalética
+$font-body:    'Work Sans', -apple-system, sans-serif; // texto corrido
+$font-mono:    'IBM Plex Mono', 'Courier New', monospace; // datos/medidas
+
+// --- Espaciado (escala base 8px) ---
+
+$space-1: 0.5rem;   // 8px
+$space-2: 1rem;     // 16px
+$space-3: 1.5rem;   // 24px
+$space-4: 2rem;     // 32px
+$space-5: 3rem;     // 48px
+$space-6: 4.5rem;   // 72px
+
+// --- Radios y sombras ---
+
+$radius-sm: 4px;
+$radius-md: 10px;
+$shadow-card: 0 2px 10px rgba($color-charcoal, 0.08);
+$shadow-card-hover: 0 6px 20px rgba($color-charcoal, 0.14);
+
+// --- Breakpoints (mobile-first) ---
+
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;

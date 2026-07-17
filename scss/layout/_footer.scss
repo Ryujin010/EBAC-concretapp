@@ -1,0 +1,15 @@
+// =====================================================
+// SITE FOOTER — Bloque BEM: .site-footer
+// =====================================================
+
+.site-footer {
+  background-color: $color-charcoal;
+  color: rgba($color-white, 0.65);
+  margin-top: $space-6;
+
+  &__inner {
+    padding-block: $space-3;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}

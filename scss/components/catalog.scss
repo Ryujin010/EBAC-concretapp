@@ -1,0 +1,91 @@
+// =====================================================
+// CATÁLOGO — Bloques BEM: .catalog-intro / .catalog-section
+// =====================================================
+
+.catalog-intro {
+  background-color: $color-charcoal;
+  color: $color-white;
+  padding-block: $space-5 $space-4;
+
+  &__eyebrow {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: $color-safety-orange;
+    margin-bottom: $space-1;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: $space-2;
+
+    @include bp-md {
+      font-size: 2.3rem;
+    }
+  }
+
+  &__lead {
+    max-width: 60ch;
+    color: rgba($color-white, 0.75);
+  }
+
+  &__counter {
+    margin-top: $space-3;
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    color: rgba($color-white, 0.85);
+  }
+
+  &__counter-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    padding: 0 6px;
+    height: 24px;
+    background-color: $color-safety-orange;
+    color: $color-white;
+    border-radius: 50%;
+    font-weight: 600;
+  }
+}
+
+.catalog-section {
+  padding-block: $space-5;
+
+  &--alt {
+    background-color: $color-sand;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: $space-2;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    margin-bottom: $space-3;
+  }
+
+  &__title-index {
+    font-family: $font-mono;
+    font-size: 0.9rem;
+    color: $color-white;
+    background-color: $color-rebar-blue;
+    padding: 0.2rem 0.55rem;
+    border-radius: $radius-sm;
+  }
+}
+
+.catalog-actions {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $space-2;
+  padding-block: $space-4 $space-6;
+
+  @include bp-sm {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

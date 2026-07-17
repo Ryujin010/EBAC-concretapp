@@ -1,0 +1,84 @@
+// =====================================================
+// SITE HEADER — Bloque BEM: .site-header
+// =====================================================
+
+.site-header {
+  background-color: $color-charcoal;
+  border-bottom: 3px solid $color-safety-orange;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $space-2;
+    padding-block: $space-2;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    color: $color-white;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: $radius-sm;
+    background-color: $color-safety-orange;
+    color: $color-white;
+    font-family: $font-display;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  &__brand-name {
+    font-family: $font-display;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    strong {
+      font-weight: 700;
+      color: $color-safety-orange;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-3;
+  }
+
+  &__nav-link {
+    display: inline-block;
+    padding-block: $space-1;
+    font-family: $font-display;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: rgba($color-white, 0.75);
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      color: $color-white;
+      text-decoration: none;
+      border-bottom-color: rgba($color-safety-orange, 0.6);
+    }
+
+    &--active {
+      color: $color-white;
+      border-bottom-color: $color-safety-orange;
+    }
+
+    @include focus-ring;
+  }
+}

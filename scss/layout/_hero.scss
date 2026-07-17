@@ -1,0 +1,61 @@
+// =====================================================
+
+// HERO — Bloque BEM: .hero
+
+// Elemento firma: franja diagonal tipo "señalización de obra"
+
+// detrás del título, hecha con gradient + clip-path.
+
+// =====================================================
+
+.hero {
+  position: relative;
+  background-color: $color-sand;
+  overflow: hidden;
+  padding-block: $space-5 $space-4;
+
+  // Franja diagonal de "zona de obra" — decorativa
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba($color-safety-orange, 0.08) 0 18px,
+      transparent 18px 36px
+    );
+    pointer-events: none;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 720px;
+  }
+
+  &__eyebrow {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-safety-orange;
+    margin-bottom: $space-1;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $color-charcoal;
+    margin-bottom: $space-2;
+
+    @include bp-md {
+      font-size: 2.75rem;
+    }
+  }
+
+  &__lead {
+    font-size: 1.05rem;
+    color: $color-concrete-wet;
+    max-width: 55ch;
+  }
+}

@@ -1,0 +1,61 @@
+// =====================================================
+// BOTONES — Bloques BEM: .btn-primary / .btn-ghost
+// (No usan el prefijo "button__" porque no comparten
+// un bloque padre; son componentes independientes)
+// =====================================================
+
+%btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-1;
+  font-family: $font-display;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  border-radius: $radius-sm;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+
+  @include focus-ring;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  background-color: $color-safety-orange;
+  color: $color-white;
+
+  &:hover {
+    background-color: darken($color-safety-orange, 8%);
+    color: $color-white;
+  }
+
+  &--block {
+    width: 100%;
+    margin-bottom: $space-1;
+  }
+}
+
+.btn-ghost {
+  @extend %btn-base;
+  background-color: transparent;
+  border-color: $color-charcoal;
+  color: $color-charcoal;
+
+  &:hover {
+    background-color: $color-charcoal;
+    color: $color-white;
+  }
+
+  &--block {
+    width: 100%;
+    text-align: center;
+  }
+}

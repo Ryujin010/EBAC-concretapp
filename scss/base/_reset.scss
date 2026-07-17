@@ -1,0 +1,81 @@
+// =====================================================
+// RESET LIGERO + BASE TIPOGRÁFICA
+// =====================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: $font-body;
+  color: $color-charcoal;
+  background-color: $color-white;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: $font-display;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+p {
+  margin: 0 0 $space-2;
+}
+
+a {
+  color: $color-rebar-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+// Respeta la preferencia de "reducir movimiento" del usuario
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Contenedor central reutilizable (independiente del .container de Bootstrap)
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  padding-inline: $space-2;
+
+  @include bp-md {
+    padding-inline: $space-4;
+  }
+}

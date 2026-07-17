@@ -1,0 +1,168 @@
+// =====================================================
+// QUOTE FORM — Bloque BEM: .quote-form (+ .quote-form-card)
+// =====================================================
+
+.quote-form-section {
+  padding-block: $space-4 $space-6;
+}
+
+.quote-form-card {
+  background-color: $color-white;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  box-shadow: $shadow-card;
+  padding: $space-3;
+  margin-top: -#{$space-5};
+  position: relative;
+  z-index: 1;
+
+  @include bp-md {
+    padding: $space-5;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    margin-bottom: $space-1;
+  }
+
+  &__subtitle {
+    color: $color-concrete-wet;
+    font-size: 0.9rem;
+    margin-bottom: $space-4;
+
+    span {
+      color: $color-safety-orange;
+    }
+  }
+}
+
+.quote-form {
+
+  &__fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 $space-4;
+    border-top: 1px solid $color-border;
+    padding-top: $space-3;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    font-family: $font-display;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: $space-3;
+    padding: 0;
+  }
+
+  &__legend-index {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $color-white;
+    background-color: $color-rebar-blue;
+    border-radius: $radius-sm;
+  }
+
+  // Grid responsivo: 1 columna en móvil, 2 en tablet/desktop
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-3;
+    margin-bottom: $space-3;
+
+    @include bp-md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    &--full {
+      @include bp-md {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-charcoal;
+  }
+
+  &__input,
+  &__select {
+    font-family: $font-body;
+    font-size: 0.95rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid rgba($color-charcoal, 0.25);
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    color: $color-charcoal;
+    width: 100%;
+
+    &:focus-visible {
+      outline: 3px solid $color-safety-orange;
+      outline-offset: 1px;
+      border-color: $color-safety-orange;
+    }
+
+    &--mono {
+      font-family: $font-mono;
+    }
+  }
+
+  &__radio-group {
+    display: flex;
+    gap: $space-3;
+  }
+
+  &__radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    input {
+      accent-color: $color-safety-orange;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: $space-2;
+    margin-top: $space-4;
+
+    @include bp-sm {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// Estado oculto reutilizable (lo activa js/main.js)
+
+.is-hidden {
+  display: none !important;
+}

@@ -1,0 +1,32 @@
+// =====================================================
+
+// MIXINS — enfoque mobile-first.
+
+// Uso: .bloque { @include bp-md { ... } }
+
+// =====================================================
+
+@mixin bp-sm {
+  @media (min-width: $bp-sm) { @content; }
+}
+
+@mixin bp-md {
+  @media (min-width: $bp-md) { @content; }
+}
+
+@mixin bp-lg {
+  @media (min-width: $bp-lg) { @content; }
+}
+
+@mixin bp-xl {
+  @media (min-width: $bp-xl) { @content; }
+}
+
+// Estado de foco visible y consistente (accesibilidad)
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 3px solid $color-safety-orange;
+    outline-offset: 2px;
+  }
+}
