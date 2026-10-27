@@ -1,6 +1,6 @@
 # ConcretApp
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
 > Sitio web para una empresa del sector de la construcción, con presentación de servicios y diseño profesional.
 
@@ -17,16 +17,13 @@ Proyecto desarrollado durante mi formación en **EBAC**.
 
 ## 📖 Descripción
 
-Sitio web para una empresa del sector de la construcción, con presentación de servicios y diseño profesional.
-
-<!-- Agrega aquí una captura de pantalla de tu proyecto:
-![Vista previa](./img/preview.png)
--->
+Sitio web para una empresa del sector de la construcción, con presentación de servicios y diseño profesional, en donde cualquier cliente puede solicitar una cotización del servicio y colocación de concreto.
 
 ## 🛠️ Tecnologías
 
 - **HTML5**
 - **CSS3**
+- **JavaScript**
 
 ## ✨ Características
 
